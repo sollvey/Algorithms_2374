@@ -51,3 +51,25 @@ class DynamicArray:
             return self.array[index]
         else:
             return "Index out of array"
+
+print("Init DYNAMIC ARRAY")
+da = DynamicArray()
+print("Array contains: ", da.__dict__)
+print("ADDING '1' and '2'")
+da.add(1)
+da.add(2)
+print("Array contains: ", da.__dict__)
+print("SETTING '3' INSTEAD OF '2'")
+da.set(3, 3)
+da.set(3, 1)
+print("Array contains: ", da.__dict__)
+print("GETTING ALL elements")
+print(da.get(0))
+print(da.get(1))
+print(da.get(2))
+print("GETTING SIZE")
+print(da.size())
+print("REMOVING elements with indexes 1 and 2")
+print(da.remove(1))
+print(da.remove(2))
+print("Array contains: ", da.__dict__)

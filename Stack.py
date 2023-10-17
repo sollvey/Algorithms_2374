@@ -1,24 +1,27 @@
+from DynamicArray import DynamicArray
+
+
 class Stack: 
 
     def __init__(self):
-        self.stack = []
+        self.stack = DynamicArray()
         
     def size(self):
-        return len(self.stack)
+        return self.stack.size()
 
     def push(self, data):
-        self.stack.append(data)
+        self.stack.add(data)
         #return f"Your stack {self.stack}"
         
     def pop(self):
-        if len(self.stack) == 0:
+        if self.stack.size() == 0:
             return "It's an empty stack"
         else:
-            return self.stack.pop()
+            return self.stack.remove(self.size() - 1)
         
     def peek(self):
         if self.stack:
-            return self.stack[-1]
+            return self.stack.get(self.size() - 1)
         else:
             return '~'
 
@@ -31,6 +34,7 @@ if __name__ == "__main__":
     st.push(1)
     st.push(2)
     st.push(3)
+    st.peek()
     print("Stack contains: ", st.__dict__)
     print("GETTING SIZE")
     print(st.size())
